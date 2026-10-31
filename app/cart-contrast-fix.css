@@ -1,0 +1,51 @@
+/* Keep both cart controls crisp on every section colour. */
+.persistent-cart > span,
+.scroll-cart > span:first-child {
+  width: 22px !important;
+  height: 22px !important;
+  display: block !important;
+  overflow: hidden;
+  color: transparent !important;
+  font-size: 0 !important;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M3 3h2l2.2 10a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 6H6'/%3E%3Ccircle cx='10' cy='19' r='1'/%3E%3Ccircle cx='18' cy='19' r='1'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M3 3h2l2.2 10a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 6H6'/%3E%3Ccircle cx='10' cy='19' r='1'/%3E%3Ccircle cx='18' cy='19' r='1'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.persistent-cart > span {
+  color: var(--ink, #171713) !important;
+  background-color: currentColor !important;
+}
+
+.scroll-cart {
+  background: #fffaf0 !important;
+  color: var(--red, #e54420) !important;
+  border: 2px solid rgba(229, 68, 32, 0.18) !important;
+  box-shadow: 0 10px 28px rgba(23, 23, 19, 0.18) !important;
+}
+
+.scroll-cart > span:first-child {
+  color: var(--red, #e54420) !important;
+  background-color: currentColor !important;
+}
+
+.scroll-cart:hover,
+.scroll-cart:focus-visible {
+  background: #fff !important;
+}
+
+.scroll-cart.has-items {
+  background: var(--green, #159447) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.scroll-cart.has-items > span:first-child {
+  color: #fff !important;
+  background-color: currentColor !important;
+}
+
+.scroll-cart > b {
+  background: var(--red, #e54420) !important;
+  border-color: #fffaf0 !important;
+}

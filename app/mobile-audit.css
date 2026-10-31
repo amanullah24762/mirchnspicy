@@ -1,0 +1,326 @@
+/* Final small-screen consistency pass shared by every route. */
+@media (max-width: 820px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  main,
+  section,
+  .section,
+  .hero-clean,
+  .inner-hero,
+  .story,
+  .experience,
+  .contact,
+  .footer {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* The menu now follows the sticky header instead of using a fixed page offset. */
+  .header .nav {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-height: calc(100dvh - 70px);
+    overscroll-behavior: contain;
+  }
+
+  .header-actions {
+    flex: 0 0 auto;
+  }
+
+  .menu-toggle,
+  .persistent-cart,
+  .cart-close,
+  .add-btn,
+  .quote-arrow {
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  .hero-clean-copy,
+  .story-copy,
+  .experience-copy,
+  .contact-copy,
+  .contact-info,
+  .featured-post > div,
+  .blog-grid article > div {
+    min-width: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  a,
+  address {
+    overflow-wrap: break-word;
+  }
+
+  .inner-hero > img,
+  .featured-post img,
+  .recipe-image,
+  .blog-grid img,
+  .story-main,
+  .story-small {
+    max-width: 100%;
+  }
+
+  .cart {
+    height: 100dvh;
+    max-height: 100dvh;
+    top: 0;
+  }
+
+  .cart-items {
+    overscroll-behavior: contain;
+  }
+
+  .cart-foot {
+    max-height: 60dvh;
+    overscroll-behavior: contain;
+  }
+
+  .checkout-fields input,
+  .checkout-fields textarea,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select,
+  .menu-search input {
+    max-width: 100%;
+    font-size: 16px !important;
+  }
+
+  .scroll-cart {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+
+  .floating-call {
+    right: max(14px, env(safe-area-inset-right)) !important;
+    bottom: max(14px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .real-brand {
+    flex: 1 1 auto;
+    max-width: calc(100vw - 145px) !important;
+    overflow: hidden;
+  }
+
+  .real-brand .brand {
+    min-width: 0;
+  }
+
+  .real-brand .brand > span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero-clean-actions .btn,
+  .hero-menu-btn,
+  .menu-note .btn,
+  .branch-actions .btn,
+  .contact-form .btn {
+    min-height: 48px;
+  }
+
+  .hero-clean-visual,
+  .inner-hero > img {
+    max-height: min(72dvh, 430px);
+  }
+
+  .hero-clean-meta {
+    gap: 7px;
+  }
+
+  .hero-clean-meta > span {
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .category-showcase button,
+  .food-card,
+  .featured-post,
+  .blog-grid article,
+  .recipe-grid article,
+  .branch-grid article,
+  .location-card,
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .menu-filter-row,
+  .category-tabs {
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x proximity;
+  }
+
+  .menu-filter-row button,
+  .category-tabs button {
+    scroll-snap-align: start;
+  }
+
+  .visual-menu-list article {
+    height: auto;
+    min-height: 0;
+  }
+
+  .pagination {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pagination > div {
+    min-width: 0;
+    scrollbar-width: none;
+  }
+
+  .pagination > div::-webkit-scrollbar,
+  .category-tabs::-webkit-scrollbar,
+  .menu-filter-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .location-card,
+  .branch-grid article {
+    min-width: 0;
+  }
+
+  .location-card > div,
+  .branch-grid article > div,
+  .branch-actions {
+    min-width: 0;
+  }
+
+  .contact-form,
+  .checkout-form {
+    width: 100%;
+  }
+
+  .footer-main,
+  .footer-links,
+  .footer-bottom {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .topbar {
+    gap: 8px;
+  }
+
+  .topbar span:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .topbar a {
+    flex: 0 0 auto;
+  }
+
+  .hero-clean h1,
+  .inner-hero h1 {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .hero-clean-meta {
+    scrollbar-width: none;
+  }
+
+  .hero-clean-meta::-webkit-scrollbar {
+    display: none;
+  }
+
+  .blog-grid article {
+    grid-template-columns: 88px minmax(0, 1fr) !important;
+  }
+
+  .blog-grid article > img {
+    width: 88px;
+    height: 100%;
+    min-height: 120px;
+  }
+
+  .contact-form,
+  .featured-post > div {
+    padding: 20px !important;
+  }
+
+  .whatsapp-order-btn {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+  }
+
+  .whatsapp-order-btn > span {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    padding-inline: 10px !important;
+  }
+
+  .real-brand {
+    max-width: calc(100vw - 132px) !important;
+  }
+
+  .real-brand > img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .brand {
+    font-size: 14px !important;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .section h2,
+  .testimonials h2,
+  .contact h2,
+  .inner-hero h1 {
+    font-size: 34px !important;
+  }
+
+  .order-type button {
+    padding-inline: 5px;
+  }
+}
+
+@media (max-width: 820px) and (orientation: landscape) and (max-height: 500px) {
+  .header {
+    height: 60px !important;
+  }
+
+  .header .nav {
+    max-height: calc(100dvh - 60px);
+  }
+
+  .hero-clean {
+    padding-top: 32px;
+  }
+
+  .hero-clean-visual,
+  .inner-hero > img {
+    height: 78dvh !important;
+    max-height: 360px;
+  }
+
+  .cart-foot {
+    max-height: 70dvh;
+  }
+}

@@ -1,0 +1,130 @@
+.branch-actions .branch-direction,
+.branch-actions .branch-call,
+.branch-actions > a {
+  min-height: 46px;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.branch-actions .branch-call {
+  border: 1px solid rgba(23,63,44,.2);
+  background: #fffaf0;
+  color: #173f2c;
+}
+
+.branch-actions > a:last-child {
+  border: 1px solid rgba(23,63,44,.2) !important;
+  border-radius: 12px !important;
+  background: #fffaf0 !important;
+  color: #173f2c !important;
+  box-shadow: none !important;
+}
+
+.branch-actions svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.branch-actions .branch-call:hover {
+  border-color: #f4b619;
+  background: #f4b619;
+}
+
+@media(max-width:640px){
+  .branch-grid article {
+    padding: 18px !important;
+    border: 1px solid rgba(23,63,44,.11);
+    border-radius: 17px !important;
+    background: #fffaf0;
+    box-shadow: 0 8px 24px rgba(23,23,19,.055);
+  }
+
+  .branch-grid article > div {
+    min-width: 0;
+  }
+
+  .branch-grid article > span {
+    width: 42px;
+    height: 42px;
+    font-size: 11px;
+  }
+
+  .branch-grid article h2 {
+    margin: 5px 0 8px;
+    font-size: 24px !important;
+    line-height: 1.05;
+  }
+
+  .branch-grid article p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .branch-actions {
+    width: 100%;
+    margin-top: 16px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .branch-actions .branch-direction,
+  .branch-actions .branch-call,
+  .branch-actions > a {
+    width: 100% !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    padding: 0 9px !important;
+    margin: 0 !important;
+    border-radius: 10px !important;
+    justify-self: stretch;
+    font-size: 9px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+  }
+
+  .branch-actions > a:first-child {
+    border: 1px solid #f4b619 !important;
+    background: #173f2c !important;
+    color: #fff !important;
+  }
+
+  .branch-actions > a:last-child {
+    border: 1px solid rgba(23,63,44,.2) !important;
+    background: #fffaf0 !important;
+    color: #173f2c !important;
+  }
+
+  .branch-actions > a svg,
+  .branch-actions > a span {
+    flex: 0 0 auto;
+  }
+
+  .branch-actions > a svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}
+
+@media(max-width:360px){
+  .branch-actions {
+    grid-template-columns: 1fr !important;
+  }
+}

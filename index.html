@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mirch N Spicy — bold Pakistani flavours, BBQ, karahi, rolls and more across Islamabad & Rawalpindi." />
+  <title>Mirch N Spicy | Good Food. Great Taste.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar"><span>🔥 Fresh off the grill</span><span>Islamabad & Rawalpindi</span><a href="tel:+923055040848">Call 0305 5040848</a></div>
+  <header class="header" id="top">
+    <a class="brand" href="#home" aria-label="Mirch N Spicy home"><span class="brand-mark">M</span><span>Mirch <i>N</i> Spicy<small>Good food • Great taste</small></span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#locations">Locations</a><a href="#stories">Stories</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions"><button class="cart-button" aria-label="Open cart">Bag <b id="cartCount">0</b></button><a class="btn btn-small" href="#menu">Order now</a></div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Pakistani specialties • Since day one</p>
+        <h1>Bold flavour.<br><em>Desi soul.</em></h1>
+        <p class="hero-lead">From smoky BBQ and fiery karahi to our iconic Boom Boom rolls — every bite is made fresh, full of flavour and best shared.</p>
+        <div class="hero-buttons"><a class="btn" href="#menu">Explore the menu <span>↗</span></a><a class="text-link" href="tel:+923055040848">Call to order <span>→</span></a></div>
+        <div class="hero-proof"><div><strong>9+</strong><span>Menu categories</span></div><div><strong>10</strong><span>Local branches</span></div><div><strong>Fresh</strong><span>Made to order</span></div></div>
+      </div>
+      <div class="hero-visual reveal">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1400&q=88" alt="A fresh Pakistani food platter" />
+        <div class="dish-note"><span>Today’s favourite</span><strong>Signature BBQ Platter</strong><small>Smoky • Juicy • Char-grilled</small></div>
+        <span class="spice-stamp">100%<br>DESI<br>FLAVOUR</span>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Popular food categories"><div>BBQ & GRILLED <i>✦</i> KARAHI <i>✦</i> BOOM BOOM ROLLS <i>✦</i> BIRYANI <i>✦</i> BURGERS <i>✦</i> DEALS <i>✦</i></div></section>
+
+    <section class="section menu-section" id="menu">
+      <div class="section-head reveal"><div><p class="eyebrow">A little heat, a lot of heart</p><h2>Cravings, <em>sorted.</em></h2></div><p>Choose from our most-loved dishes. Use the categories to find your favourite, then add it to your bag.</p></div>
+      <div class="category-tabs" role="tablist">
+        <button class="active" data-filter="all">All</button><button data-filter="bbq">BBQ</button><button data-filter="rolls">Rolls</button><button data-filter="karahi">Karahi</button><button data-filter="rice">Rice</button><button data-filter="burgers">Burgers</button><button data-filter="sides">Sides</button><button data-filter="drinks">Drinks</button><button data-filter="deals">Deals</button>
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+      <div class="menu-note"><span>Can’t find your favourite?</span><p>Our full kitchen menu includes 150+ roll variations, soups, naans, shakes and more.</p><a class="btn btn-dark" href="tel:+923055040848">Call for full menu</a></div>
+    </section>
+
+    <section class="story section" id="about">
+      <div class="story-images reveal"><img class="story-main" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1100&q=88" alt="Pakistani dishes prepared with fresh ingredients"><img class="story-small" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85" alt="Fresh food preparation"><div class="since">Our story<br><strong>Made with<br>passion</strong></div></div>
+      <div class="story-copy reveal"><p class="eyebrow">Welcome to Mirch N Spicy</p><h2>Food that feels<br><em>like home.</em></h2><p>Our journey began with one simple idea: bring the unforgettable taste of Pakistani street food into a warm, family-friendly dining experience. From our first grill to every plate today, we create more than meals — we create moments.</p><p>Signature Chicken Tikka, smoky BBQ rolls, zesty chutneys and rich karahis made us a local favourite. Our menu now brings in burgers, pasta and Chinese-style rice dishes too, each with our unmistakable desi twist.</p><div class="values"><article><span>01</span><h3>Our mission</h3><p>Serve quality food with authentic taste, generous value and exceptional hospitality.</p></article><article><span>02</span><h3>Our vision</h3><p>Become Pakistan’s leading name in bold, creative Pakistani fusion dining.</p></article></div></div>
+    </section>
+
+    <section class="experience">
+      <div class="experience-copy reveal"><p class="eyebrow">Why dine with us?</p><h2>More than a meal.<br><em>It’s a mood.</em></h2><div class="amenities"><span>Free WiFi</span><span>Family seating</span><span>Parking</span><span>Takeaway</span><span>Delivery</span><span>Catering</span></div><p>Fresh ingredients daily. Sanitized kitchens. Trained food handlers. Regular quality checks and safe, sealed packaging — because flavour matters, but safety is everything.</p></div>
+      <div class="experience-card"><small>QUALITY PROMISE</small><strong>Fresh every day</strong><span>Premium meats • Hand-ground spices • Made-to-order meals</span></div>
+    </section>
+
+    <section class="section locations" id="locations">
+      <div class="section-head reveal"><div><p class="eyebrow">Find your nearest branch</p><h2>Serving flavour<br><em>across the twin cities.</em></h2></div><div class="hours"><small>Opening hours</small><strong>Mon–Sat · 9AM–10PM</strong><strong>Sat–Sun · 9AM–12AM</strong></div></div>
+      <div class="location-layout"><div class="city-tabs"><button class="active" data-city="islamabad">Islamabad <span>5 locations</span></button><button data-city="rawalpindi">Rawalpindi <span>5 locations</span></button></div><div class="location-list" id="locationList"></div></div>
+    </section>
+
+    <section class="testimonials" id="stories">
+      <p class="eyebrow">Loved by spice seekers</p><h2>Happy plates.<br><em>Happier people.</em></h2>
+      <div class="quote-wrap"><button class="quote-arrow prev" aria-label="Previous review">←</button><blockquote id="quote"><div class="stars">★★★★★</div><p>“If you love bold, spicy desi flavours, this place is a must-try. Their Boom Boom Rolls and Karahi are my absolute favourites.”</p><footer>Hassan M. <span>— DHA Phase 5</span></footer></blockquote><button class="quote-arrow next" aria-label="Next review">→</button></div>
+    </section>
+
+    <section class="section recipes">
+      <div class="section-head"><div><p class="eyebrow">From our kitchen</p><h2>Food stories &<br><em>desi inspiration.</em></h2></div><a class="text-link" href="#contact">Stay connected →</a></div>
+      <div class="recipe-grid"><article><div class="recipe-image"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=900&q=85" alt="Rich curry"><span>Recipe</span></div><small>6 min read</small><h3>The secret behind a rich, aromatic karahi</h3></article><article><div class="recipe-image"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=900&q=85" alt="Grilled kebabs"><span>BBQ guide</span></div><small>4 min read</small><h3>How we get that signature smoky char</h3></article><article><div class="recipe-image"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=900&q=85" alt="Fresh ingredients"><span>Our kitchen</span></div><small>3 min read</small><h3>Fresh ingredients, unforgettable flavour</h3></article></div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="section-head"><div><p class="eyebrow">Good to know</p><h2>Questions,<br><em>answered.</em></h2></div><p>Everything you need to know before placing your next order.</p></div>
+      <div class="faq-list">
+        <details open><summary>Do you offer home delivery?<span>+</span></summary><p>Yes. Delivery is available across selected areas of Islamabad and Rawalpindi. Call 0305 5040848 to confirm coverage and timing.</p></details>
+        <details><summary>Can I book a table or arrange catering?<span>+</span></summary><p>Absolutely. Use the inquiry form below or call our team for table bookings, family gatherings and catering requirements.</p></details>
+        <details><summary>What are your opening hours?<span>+</span></summary><p>Monday to Saturday, 9AM–10PM. Weekend service runs until 12AM. Timings can vary by branch.</p></details>
+        <details><summary>How can I confirm prices and availability?<span>+</span></summary><p>Menu prices shown are indicative. Our team confirms the final total, availability and delivery charges when you call to place the order.</p></details>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-copy"><p class="eyebrow">Talk to us</p><h2>Let’s make your next<br>meal <em>memorable.</em></h2><p>Book a table, plan an event, ask about catering or simply tell us what you’re craving.</p><div class="contact-details"><a href="tel:+923055040848"><small>Call us</small>0305 5040848</a><a href="mailto:order@mirchnspicy.com"><small>Email us</small>order@mirchnspicy.com</a><a href="https://maps.google.com" target="_blank" rel="noopener"><small>Visit us</small>Iqbal Boulevard, DHA Phase II, Islamabad</a></div></div>
+      <form class="contact-form" id="contactForm"><div class="field-row"><label>Your name<input required name="name" placeholder="Full name"></label><label>Phone number<input required name="phone" type="tel" placeholder="03xx xxxxxxx"></label></div><label>Email address<input required name="email" type="email" placeholder="you@email.com"></label><label>How can we help?<select name="purpose"><option>Book a table</option><option>Order inquiry</option><option>Catering</option><option>Feedback</option></select></label><label>Your message<textarea name="message" rows="4" placeholder="Tell us more..."></textarea></label><button class="btn" type="submit">Send inquiry <span>↗</span></button><p class="form-status" aria-live="polite"></p></form>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="footer-main"><a class="brand footer-brand" href="#top"><span class="brand-mark">M</span><span>Mirch <i>N</i> Spicy<small>Good food • Great taste</small></span></a><p>Bold Pakistani flavours, fresh ingredients and warm hospitality — served daily across Islamabad & Rawalpindi.</p><div class="footer-links"><div><h4>Explore</h4><a href="#menu">Menu</a><a href="#about">Our story</a><a href="#locations">Locations</a><a href="#stories">Reviews</a></div><div><h4>Support</h4><a href="#contact">Contact</a><a href="#faq">FAQs</a><a href="#">Privacy policy</a><a href="#">Refund policy</a></div><div><h4>Social</h4><a href="#">Instagram ↗</a><a href="#">Facebook ↗</a><a href="#">TikTok ↗</a></div></div></div><div class="footer-bottom"><span>© 2026 Mirch N Spicy. All rights reserved.</span><a href="#top">Back to top ↑</a></div></footer>
+
+  <aside class="cart" aria-hidden="true"><div class="cart-head"><h3>Your order</h3><button class="cart-close" aria-label="Close cart">×</button></div><div class="cart-items" id="cartItems"><div class="empty-cart"><span>🛍️</span><p>Your bag is empty.</p><small>Add something delicious from the menu.</small></div></div><div class="cart-foot"><div><span>Estimated total</span><strong id="cartTotal">Rs. 0</strong></div><a class="btn" id="checkoutBtn" href="tel:+923055040848">Call to confirm order</a><small>Final availability and total confirmed by phone.</small></div></aside><div class="overlay"></div>
+  <a class="floating-call" href="tel:+923055040848" aria-label="Call Mirch N Spicy">☎<span>Order by phone</span></a>
+  <script src="script.js"></script>
+</body>
+</html>

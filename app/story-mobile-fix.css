@@ -1,0 +1,42 @@
+@media (max-width: 640px) {
+  .story-images .since {
+    width: 108px;
+    height: 108px;
+    right: 4px;
+    top: 18px;
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    overflow: hidden;
+    font-size: 8px;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    transform: rotate(5deg);
+    z-index: 2;
+  }
+
+  .story-images .since strong {
+    display: block;
+    max-width: 82px;
+    font-size: 15px;
+    line-height: 0.98;
+    letter-spacing: -0.25px;
+  }
+}
+
+@media (max-width: 380px) {
+  .story-images .since {
+    width: 96px;
+    height: 96px;
+    right: 2px;
+    padding: 12px 8px;
+  }
+
+  .story-images .since strong {
+    max-width: 72px;
+    font-size: 14px;
+  }
+}

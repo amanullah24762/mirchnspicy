@@ -1,0 +1,37 @@
+/* Mobile-first refinements shared by every page */
+.real-brand>img{width:52px;height:52px;object-fit:contain}
+@media(max-width:768px){
+ body{width:100%;overflow-x:hidden}
+ .topbar{padding:0 16px;font-size:9px;letter-spacing:.7px;gap:10px}.topbar a{white-space:nowrap}
+ .header{padding:0 16px;gap:10px}.real-brand{max-width:195px}.real-brand>img{width:42px;height:42px}.brand small{letter-spacing:1px}
+ .menu-toggle{position:relative;z-index:3;padding:4px;width:36px;min-width:36px;cursor:pointer}.menu-toggle span{transition:transform .2s}
+ .nav{top:102px;max-height:calc(100dvh - 102px);overflow-y:auto;padding:22px 20px 30px;gap:0;box-shadow:0 18px 35px rgba(0,0,0,.16)}.nav a{width:100%;padding:14px 2px;border-bottom:1px solid var(--line)}
+ .hero{min-height:auto}.hero-copy{min-width:0}.hero h1{overflow-wrap:anywhere}.hero-proof{width:100%;justify-content:space-between}.hero-proof div{min-width:0}.hero-visual>img{box-shadow:8px 8px 0 var(--yellow)}
+ .ticker{font-size:10px;padding:13px 0}
+ .section-head>p{margin:0}.category-tabs{margin-right:-20px;padding-right:20px}.category-tabs button{min-height:42px}
+ .food-card,.recipe-grid article{width:100%}.food-image{height:230px}
+ .inner-hero{gap:35px}.inner-hero>div{min-width:0}.inner-hero>div>p:last-child{font-size:14px}.inner-hero>img{width:calc(100% - 8px);box-shadow:8px 8px 0 var(--red)}
+ .category-showcase{gap:10px}.category-showcase button{touch-action:manipulation}.category-showcase button>div{left:13px;right:10px;bottom:13px}.category-showcase button>span{top:10px;right:10px}
+ .full-menu{padding-top:55px}.menu-search{width:100%;min-height:48px}.menu-filter-row{margin-right:-20px;padding-right:20px}.menu-filter-row button{min-height:41px}
+ .visual-menu-list article{align-items:center}.visual-menu-list article>div{min-width:0}.menu-item-title{align-items:flex-start;flex-wrap:wrap}.menu-item-title h3{overflow-wrap:anywhere}.visual-menu-list article>button{min-height:40px;min-width:72px}
+ .cart{width:100%;padding:20px 18px;padding-bottom:max(20px,env(safe-area-inset-bottom))}.cart-head{min-height:55px}.cart-close{width:44px;height:44px}.cart-foot .btn{min-height:52px}
+ .story-images{width:100%}.story-main{width:88%}.story-small{right:0}.experience-card{width:min(280px,85vw)}
+ .location-card{grid-template-columns:34px 1fr 22px}.location-card p{overflow-wrap:anywhere}.branch-actions{align-items:flex-start;flex-direction:column}.branch-actions .btn{width:100%}
+ .quote-wrap blockquote p{font-size:22px}.quote-arrow{flex:none}
+ .contact-form input,.contact-form textarea,.contact-form select{font-size:16px;min-height:44px}.contact-form .btn{width:100%;min-height:52px}
+ .footer-links{gap:30px 20px}.footer-links a{min-height:28px}.footer-bottom{align-items:flex-start;flex-direction:column}
+ .floating-call{width:52px;height:52px;padding:0;display:grid;place-items:center;font-size:19px;bottom:16px;right:16px}.floating-call span{display:none}
+}
+@media(max-width:430px){
+ .topbar span:first-child{max-width:145px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.brand{font-size:16px}.brand small{font-size:7px}.header-actions{margin-left:auto}
+ .hero{padding-left:16px;padding-right:16px}.hero h1{font-size:49px}.hero-lead{margin:22px 0}.hero-proof{gap:10px}.hero-proof strong{font-size:18px}.hero-proof span{font-size:8px}.hero-visual{height:380px}.dish-note{max-width:220px;padding:13px 15px}.spice-stamp{top:8%}
+ .section{padding-left:16px;padding-right:16px}.section h2,.testimonials h2,.contact h2{font-size:40px}.section-head{gap:18px}
+ .category-showcase{grid-template-columns:1fr}.category-showcase button{min-height:190px}.category-showcase strong{font-size:20px}
+ .menu-filter-row{margin-right:-16px;padding-right:16px}.menu-results-meta{font-size:9px}.visual-menu-list article{grid-template-columns:62px minmax(0,1fr);position:relative;padding:16px 0}.menu-item-image{width:62px;height:62px}.visual-menu-list article>strong{grid-column:2;margin-top:3px}.visual-menu-list article>button{position:absolute;right:0;bottom:16px;min-width:65px}.menu-item-title{padding-right:0}.menu-item-title h3{font-size:18px}.menu-item-title span{font-size:7px}.visual-menu-list article p{padding-right:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ .pagination{margin-top:30px}.pagination>div{gap:5px}.pagination button{min-width:36px;height:38px;padding:0 10px}.pagination-nav{font-size:10px}
+ .story{padding-left:16px;padding-right:16px}.story-images{min-height:420px}.story-main{height:370px}.story-small{height:145px}.since{width:88px;height:88px;padding:12px}
+ .purpose-grid article,.quality-grid article{padding:24px}.purpose-grid h2{font-size:37px}.experience{padding-left:16px;padding-right:16px}
+ .city-switch button{padding:15px 12px;font-size:16px}.branch-grid article{grid-template-columns:38px 1fr}.branch-grid h2{font-size:23px}.hours{padding:16px}
+ .blog-grid article{grid-template-columns:105px 1fr}.blog-grid article>div{padding:15px}.featured-post>div{padding:24px}.featured-post h2{font-size:33px}
+ .contact{padding-left:16px;padding-right:16px}.contact-form{border-radius:16px}.footer-links{grid-template-columns:1fr 1fr}.footer-main{gap:28px}
+}

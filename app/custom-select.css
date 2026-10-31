@@ -1,0 +1,110 @@
+.custom-select {
+  position: relative;
+  width: 100%;
+  margin-top: 7px;
+  z-index: 5;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.custom-select.open { z-index: 30; }
+
+.custom-select-trigger {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 13px 0 16px;
+  border: 1px solid rgba(23,63,44,.15);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.custom-select-trigger svg {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  fill: none;
+  stroke: #173f2c;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .22s;
+}
+
+.custom-select.open .custom-select-trigger {
+  border-color: #f4b619;
+  box-shadow: 0 0 0 3px rgba(244,182,25,.12);
+}
+
+.custom-select.open .custom-select-trigger svg { transform: rotate(180deg); }
+
+.custom-select-options {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 7px);
+  left: 0;
+  right: 0;
+  padding: 7px;
+  border: 1px solid rgba(244,182,25,.6);
+  border-radius: 14px;
+  background: #173f2c;
+  box-shadow: 0 18px 42px rgba(15,35,24,.26);
+  display: grid;
+  gap: 4px;
+  animation:customSelectIn .18s ease both;
+}
+
+@keyframes customSelectIn { from { opacity:0; transform:translateY(-5px) scale(.985) } to { opacity:1; transform:none } }
+
+.custom-select-options button {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 11px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.custom-select-options button:hover,
+.custom-select-options button:focus-visible {
+  background: rgba(244,182,25,.13);
+}
+
+.custom-select-options button.selected {
+  background: #f4b619;
+  color: #173f2c;
+  font-weight: 800;
+}
+
+.custom-select-options button svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media(max-width:640px){
+  .custom-select-trigger { min-height:50px; font-size:16px; }
+  .custom-select-options { max-height:240px; overflow-y:auto; }
+  .custom-select-options button { min-height:44px; font-size:14px; }
+}

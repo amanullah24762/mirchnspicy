@@ -1,0 +1,67 @@
+@media (max-width: 768px) {
+  /* GPU-backed motion keeps scrolling fluid on phones. */
+  .hero-brand-chip img,
+  .hero-spice-seal,
+  .ticker div,
+  .floating-call,
+  .scroll-cart {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  .food-card,
+  .recipe-grid article,
+  .category-showcase button,
+  .location-card,
+  .branch-grid article,
+  .blog-grid article,
+  button,
+  .btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .food-card:active,
+  .recipe-grid article:active,
+  .category-showcase button:active,
+  .location-card:active,
+  .branch-grid article:active,
+  .blog-grid article:active {
+    transform: scale(.985);
+    transition: transform 100ms ease !important;
+  }
+
+  button:active,
+  .btn:active,
+  .hero-menu-btn:active {
+    transform: scale(.96);
+    transition: transform 90ms ease !important;
+  }
+
+  .add-btn:active {
+    transform: rotate(45deg) scale(.92);
+  }
+
+  .nav.open a {
+    animation-duration: 320ms;
+  }
+
+  .ticker div {
+    animation-duration: 22s;
+  }
+
+  .hero-brand-chip img,
+  .hero-spice-seal {
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .hero-brand-chip img,
+  .hero-spice-seal,
+  .ticker div,
+  .floating-call,
+  .scroll-cart,
+  .nav.open a {
+    animation: none !important;
+  }
+}

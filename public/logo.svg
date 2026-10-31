@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Mirch N Spicy</title>
+  <desc id="desc">Circular Mirch N Spicy logo with a flaming red chilli and the words Spice Up Your Life</desc>
+  <defs>
+    <path id="topArc" d="M 91 257 A 165 165 0 0 1 421 257"/>
+    <path id="bottomArc" d="M 94 280 A 165 165 0 0 0 418 280"/>
+    <linearGradient id="chilli" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4a37"/><stop offset="1" stop-color="#c91622"/></linearGradient>
+    <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0"><stop stop-color="#ff9d16"/><stop offset=".62" stop-color="#ffc329"/><stop offset="1" stop-color="#fff06b"/></linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="246" fill="#071607"/>
+  <circle cx="256" cy="256" r="204" fill="none" stroke="#f3f0df" stroke-width="10"/>
+  <circle cx="256" cy="256" r="151" fill="none" stroke="#f3f0df" stroke-width="5" opacity=".95"/>
+  <text fill="#f3f0df" font-family="Arial, Helvetica, sans-serif" font-size="37" font-weight="700" letter-spacing="2"><textPath href="#topArc" startOffset="50%" text-anchor="middle">MIRCH N SPICY</textPath></text>
+  <text fill="#f3f0df" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="3"><textPath href="#bottomArc" startOffset="50%" text-anchor="middle">SPICE UP YOUR LIFE</textPath></text>
+  <circle cx="414" cy="153" r="6" fill="#f3f0df"/>
+  <!-- knife -->
+  <path d="M103 163c-11 24-15 54-11 82 2 16 10 23 17 23l-6 89c0 14 20 14 21 0l-3-90c9-3 15-14 17-29 4-30-3-63-15-78-5-7-14-6-20 3z" fill="#80a94d" stroke="#f3f0df" stroke-width="3"/>
+  <!-- fork -->
+  <path d="M397 156v65m-16-65v65m8-65v65m16-65v65M381 216c2 19 7 28 17 31l-5 110c0 13 20 13 20 0l-5-110c10-4 15-14 16-31" fill="none" stroke="#f3f0df" stroke-width="7" stroke-linecap="round"/>
+  <!-- flame -->
+  <path d="M223 284c-36-22-49-55-37-91 7 17 17 24 28 29-7-37 17-73 49-103-3 35 16 52 15 82 14-12 23-29 25-48 31 39 39 83 16 122-18 31-68 43-96 9z" fill="url(#flame)" stroke="#f48718" stroke-width="3"/>
+  <path d="M250 287c-20-14-26-36-16-57 4 12 11 17 18 21 1-19 10-34 24-48 0 22 15 33 12 54-3 22-22 37-38 30z" fill="#ff6b17"/>
+  <!-- chilli -->
+  <path d="M157 304c44 13 93 11 127-5 32-15 55-39 71-68 7 43-4 88-37 115-42 35-105 37-161 5-22-13-21-54 0-47z" fill="url(#chilli)" stroke="#f06a54" stroke-width="5"/>
+  <path d="M345 242c-7-20 5-39 23-49 9-5 16-13 20-25 5 18 1 35-12 46-10 8-18 18-22 31z" fill="#70a845" stroke="#9bc36a" stroke-width="4"/>
+  <path d="M171 316c39 11 93 7 129-12" fill="none" stroke="#ff7869" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+</svg>

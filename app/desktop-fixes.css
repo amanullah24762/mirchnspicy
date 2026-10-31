@@ -1,0 +1,100 @@
+/* Targeted laptop/desktop fixes only. Mobile remains controlled by the
+   existing max-width styles that follow the approved mobile design. */
+@media (min-width: 821px) {
+  html, body { max-width: 100%; overflow-x: clip; }
+  main, main > section { min-width: 0; }
+
+  .header { gap: clamp(16px, 2vw, 32px); }
+  .header .brand { flex: 0 1 auto; min-width: 190px; }
+  .header .nav { flex: 0 1 auto; gap: clamp(14px, 1.8vw, 30px); white-space: nowrap; }
+  .header-actions { flex: 0 0 auto; }
+
+  .inner-hero > div,
+  .inner-hero > img,
+  .hero-clean-copy,
+  .hero-clean-visual,
+  .story-copy,
+  .story-images,
+  .contact-info,
+  .contact-form { min-width: 0; }
+
+  .menu-grid,
+  .visual-menu-list,
+  .branch-grid,
+  .blog-grid,
+  .quality-grid,
+  .purpose-grid,
+  .location-list { min-width: 0; }
+
+  .visual-menu-list article,
+  .branch-grid article,
+  .blog-grid article,
+  .quality-grid article,
+  .purpose-grid article { min-width: 0; overflow: hidden; }
+
+  .visual-menu-list article > div,
+  .branch-grid article > div,
+  .blog-grid article > div { min-width: 0; }
+
+  .visual-menu-list h3,
+  .branch-grid h2,
+  .blog-grid h3 { overflow-wrap: anywhere; }
+
+  .branch-actions { flex-wrap: wrap; gap: 10px; }
+  .branch-actions .branch-direction,
+  .branch-actions .branch-call {
+    min-width: 132px;
+    height: 46px;
+    min-height: 46px;
+    padding: 0 16px !important;
+  }
+
+  .contact-page { align-items: start; }
+  .contact-inquiry-form { width: 100%; }
+  .contact-inquiry-form input,
+  .contact-inquiry-form textarea,
+  .contact-inquiry-form .custom-select,
+  .contact-inquiry-form .custom-select-button { max-width: 100%; }
+
+  .pagination { min-width: 0; }
+  .pagination > div { min-width: 0; justify-content: center; flex-wrap: wrap; }
+
+  /* Compact floating actions do not cover hero cards, forms or pagination. */
+  .floating-call {
+    right: 22px;
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: #25d366;
+    box-shadow: 0 12px 30px rgba(13,92,46,.28);
+  }
+  .floating-call > svg { width: 29px; height: 29px; }
+  .floating-call > span { display: none; }
+  .scroll-cart {
+    right: 22px;
+    bottom: 94px;
+    width: 54px;
+    height: 54px;
+    border: 3px solid #fff;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1180px) {
+  .header { padding-left: 4%; padding-right: 4%; }
+  .header .brand { min-width: 175px; font-size: 18px; }
+  .header .real-brand > img { width: 44px; height: 44px; }
+  .header .nav { gap: 13px; font-size: 12px; }
+  .header-actions .btn { padding-left: 15px; padding-right: 15px; }
+  .inner-hero { padding-left: 5%; padding-right: 5%; }
+}
+
+@media (min-width: 1001px) and (max-width: 1100px) {
+  .header .brand { min-width: 160px; font-size: 17px; }
+  .header .nav { gap: 10px; font-size: 11px; }
+  .header-actions .btn { min-width: 108px; }
+}

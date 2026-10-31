@@ -1,0 +1,112 @@
+/* Shared premium button language based on the mobile navigation cards. */
+.btn:not(.whatsapp-order-btn),
+.hero-menu-btn,
+.menu-note .btn,
+.branch-actions .btn,
+.contact-form .btn {
+  min-height: 50px;
+  padding: 13px 20px;
+  border: 1px solid rgba(244, 182, 25, 0.72) !important;
+  border-radius: 15px !important;
+  background: #173f2c !important;
+  color: #fff !important;
+  font-weight: 800;
+  box-shadow: 0 9px 22px rgba(23, 63, 44, 0.16) !important;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease !important;
+}
+
+.btn:not(.whatsapp-order-btn):hover,
+.hero-menu-btn:hover,
+.menu-note .btn:hover,
+.branch-actions .btn:hover,
+.contact-form .btn:hover {
+  border-color: #f4b619 !important;
+  background: #f4b619 !important;
+  color: #173f2c !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(244, 182, 25, 0.22) !important;
+}
+
+.btn:not(.whatsapp-order-btn):active,
+.hero-menu-btn:active,
+.menu-note .btn:active,
+.branch-actions .btn:active,
+.contact-form .btn:active {
+  transform: scale(.975) !important;
+}
+
+.add-btn {
+  border: 1px solid rgba(244, 182, 25, 0.75) !important;
+  background: #173f2c !important;
+  color: #f4b619 !important;
+  box-shadow: 0 7px 18px rgba(23, 63, 44, 0.18);
+}
+
+.add-btn:hover,
+.add-btn:focus-visible {
+  background: #f4b619 !important;
+  color: #173f2c !important;
+}
+
+.visual-menu-list article > button {
+  border: 1px solid rgba(244, 182, 25, 0.7) !important;
+  border-radius: 12px !important;
+  background: #173f2c !important;
+  color: #fff !important;
+  font-weight: 800;
+}
+
+.visual-menu-list article > button:hover,
+.visual-menu-list article > button:focus-visible {
+  background: #f4b619 !important;
+  color: #173f2c !important;
+}
+
+.category-tabs button.active,
+.menu-filter-row button.active,
+.city-tabs button.active,
+.city-switch button.active,
+.pagination button.active {
+  border-color: #f4b619 !important;
+  background: #173f2c !important;
+  color: #fff !important;
+  box-shadow: inset 0 0 0 1px rgba(244, 182, 25, 0.16);
+}
+
+.pagination-nav {
+  border-color: rgba(244, 182, 25, 0.65) !important;
+  background: #173f2c !important;
+  color: #fff !important;
+}
+
+.pagination-nav:hover:not(:disabled) {
+  border-color: #f4b619 !important;
+  background: #f4b619 !important;
+  color: #173f2c !important;
+}
+
+@media (max-width: 820px) {
+  .header .nav a {
+    border-color: rgba(244, 182, 25, 0.25) !important;
+  }
+
+  .header .nav .nav-icon {
+    background: rgba(244, 182, 25, 0.16);
+    color: #f4b619;
+  }
+
+  .header .nav a[aria-current="page"] {
+    border-color: #f4b619 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn:not(.whatsapp-order-btn),
+  .hero-menu-btn,
+  .menu-note .btn,
+  .branch-actions .btn,
+  .contact-form .btn {
+    min-height: 52px;
+    border-radius: 14px !important;
+  }
+}
