@@ -32,6 +32,16 @@ import './about-redesign.css';
 import './branch-cards-fix.css';
 import './contact-page-redesign.css';
 import './desktop-fixes.css';
+import './variant-modal.css';
+import './menu-product-cards.css';
+import './cart-toolbar-fix.css';
+import './variant-selection-controls.css';
+import './responsive-regression-fix.css';
+import './category-section.css';
+import './menu-search-redesign.css';
+import './variant-modal-final.css';
+import './home-card-quantity.css';
+import './home-menu-sync.css';
 import MotionEffects from '../components/MotionEffects';
 
 export const metadata = {

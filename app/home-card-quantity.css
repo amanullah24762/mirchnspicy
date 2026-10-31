@@ -1,0 +1,27 @@
+.food-card-selected{border:1px solid rgba(244,182,25,.7);box-shadow:0 14px 34px rgba(23,63,44,.1)}
+.food-selected-badge{position:absolute;right:13px;bottom:13px;padding:7px 10px;border-radius:99px;background:#173f2c;color:#fff;font:800 8px "DM Sans",sans-serif;letter-spacing:.7px;text-transform:uppercase;box-shadow:0 5px 16px rgba(0,0,0,.2)}
+.food-card-selected .food-bottom{display:grid!important;grid-template-columns:1fr!important;align-items:center!important;gap:12px!important}
+.food-card-selected .food-bottom>strong{display:block;width:100%}
+.food-card-controls{width:100%;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:nowrap}
+.food-card-quantity{height:42px;min-width:0;flex:1 1 auto;display:grid;grid-template-columns:minmax(36px,1fr) 30px minmax(36px,1fr);align-items:center;overflow:hidden;border:1px solid rgba(23,63,44,.18);border-radius:99px;background:#fff}
+.food-card-quantity button{width:37px;height:42px;padding:0;border:0;background:transparent;color:#173f2c;font-size:20px;font-weight:800;cursor:pointer;transition:background .18s,color .18s}
+.food-card-quantity button:hover{background:#173f2c;color:#fff}
+.food-card-quantity b{text-align:center;color:#171713;font-size:12px}
+.food-card-delete{flex:0 0 42px;width:42px;height:42px;padding:0;border:1px solid rgba(229,68,32,.24);border-radius:50%;background:#fff6f2;color:#e54420;display:grid;place-items:center;cursor:pointer;transition:background .18s,color .18s,transform .18s}
+.food-card-delete:hover{background:#e54420;color:#fff;transform:scale(1.04)}
+.food-card-delete svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+@media(max-width:640px){
+  .food-bottom{gap:10px}
+  .food-card-controls{margin-left:0}
+  .food-card-quantity{height:44px;grid-template-columns:38px 30px 38px}
+  .food-card-quantity button{width:38px;height:44px}
+  .food-card-delete{width:44px;height:44px}
+}
+
+@media(max-width:360px){
+  .food-bottom>strong{width:100%}
+  .food-card-controls{width:100%;margin-left:0;justify-content:space-between}
+  .food-card-quantity{flex:1;grid-template-columns:1fr 34px 1fr}
+  .food-card-quantity button{width:100%}
+}

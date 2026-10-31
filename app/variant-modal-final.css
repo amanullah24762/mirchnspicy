@@ -1,0 +1,37 @@
+/* Final modal layout: protects long option lists from legacy card rules. */
+.variant-modal{overflow:hidden!important;display:flex!important;flex-direction:column!important}
+.variant-modal>header{flex:0 0 auto!important}
+.variant-options{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;display:grid!important;align-content:start!important;gap:10px!important;scrollbar-gutter:stable;padding:16px!important}
+.variant-options>article{position:relative!important;width:100%!important;height:auto!important;min-height:84px!important;margin:0!important;padding:14px!important;overflow:visible!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto auto!important;grid-template-rows:auto!important;align-items:center!important;gap:12px!important;border:1px solid rgba(23,63,44,.14)!important;border-radius:15px!important;background:#fff!important;box-shadow:none!important}
+.variant-options>article.variant-selected{border-color:var(--yellow)!important;background:#fffaf0!important;box-shadow:0 8px 20px rgba(23,23,19,.06)!important}
+.variant-option-copy{grid-column:1!important;grid-row:1!important;align-self:center!important;min-width:0!important;display:flex!important;flex-direction:column!important}
+.variant-option-copy>b{display:block!important;color:var(--ink)!important;font-size:15px!important;line-height:1.25!important}
+.variant-option-copy>small{display:block!important;margin-top:4px!important;color:var(--muted)!important;font-size:10px!important;line-height:1.35!important}
+.variant-options>article>strong{grid-column:2!important;grid-row:1!important;align-self:center!important;justify-self:end!important;margin:0!important;color:var(--red)!important;font-size:14px!important;line-height:1.2!important;white-space:nowrap!important}
+.variant-add,.variant-inline-actions{grid-column:3!important;grid-row:1!important;align-self:center!important;justify-self:end!important;width:auto!important;margin:0!important}
+.variant-add{min-width:82px!important;height:42px!important;padding:0 12px!important;display:inline-flex!important;justify-content:space-between!important;border-radius:11px!important}
+.variant-modal-footer{flex:0 0 auto!important}
+
+@media(max-width:640px){
+  .variant-modal{max-height:92dvh!important}
+  .variant-modal>header{padding:18px 17px 16px!important}
+  .variant-modal>header p{max-width:270px;line-height:1.45}
+  .variant-options{padding:12px!important;gap:9px!important}
+  .variant-options>article{min-height:88px!important;padding:12px!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto auto!important;gap:5px 10px!important}
+  .variant-option-copy{grid-column:1!important;grid-row:1!important}
+  .variant-option-copy>b{font-size:14px!important}
+  .variant-option-copy>small{font-size:9px!important}
+  .variant-options>article>strong{grid-column:1!important;grid-row:2!important;justify-self:start!important;font-size:13px!important}
+  .variant-add,.variant-inline-actions{grid-column:2!important;grid-row:1/3!important;align-self:center!important;justify-self:end!important;width:auto!important}
+  .variant-add{min-width:72px!important;height:40px!important}
+  .variant-inline-actions{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-end!important;gap:7px!important;white-space:nowrap!important}
+  .variant-inline-actions .variant-delete{order:1;flex:0 0 36px!important;width:36px!important;height:36px!important;margin:0!important}
+  .variant-inline-actions .variant-quantity{order:2;flex:0 0 auto!important;margin:0!important}
+  .variant-modal-footer{padding:11px 12px!important}
+}
+
+@media(max-width:380px){
+  .variant-options>article{grid-template-columns:minmax(0,1fr) 68px!important}
+  .variant-add{min-width:68px!important;padding:0 9px!important}
+  .variant-option-copy>b{font-size:13px!important}
+}

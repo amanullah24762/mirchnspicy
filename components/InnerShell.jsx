@@ -15,16 +15,15 @@ export function SiteHeader({cartCount=0,onCartOpen}) {
     <div className="topbar"><span>🔥 Fresh off the grill</span><span>Islamabad & Rawalpindi</span><a href="tel:+923055040848">Call 0305 5040848</a></div>
     <header className="header inner-header">
       <Link className="brand real-brand" href="/"><img src="/logo.svg" alt="Mirch N Spicy"/><span>Mirch <i>N</i> Spicy<small>Good food • Great taste</small></span></Link>
-      <button className="menu-toggle" aria-label="Toggle navigation" aria-expanded={open} onClick={()=>setOpen(!open)}><span></span><span></span></button>
       <nav className={`nav ${open?'open':''}`}>{links.map(([href,label])=>{const selected=href==='/'?pathname===href:pathname.startsWith(href);return <Link key={href} href={href} aria-current={selected?'page':undefined} onClick={()=>setOpen(false)}><NavIcon name={label}/><span>{label}</span></Link>})}</nav>
-      <div className="header-actions"><a className="btn btn-small" href="/menu">Order now</a>{onCartOpen?<button className="persistent-cart" onClick={onCartOpen} aria-label={`Open cart with ${cartCount} items`}><span>🛒</span><b>{cartCount}</b></button>:<Link className="persistent-cart" href="/menu" aria-label="Open menu and cart"><span>🛒</span><b>{cartCount}</b></Link>}</div>
+      <div className="header-actions"><a className="btn btn-small" href="/menu">Order now</a>{onCartOpen?<button className="persistent-cart" onClick={onCartOpen} aria-label={`Open cart with ${cartCount} items`}><span>🛒</span><b>{cartCount}</b></button>:<Link className="persistent-cart" href="/menu" aria-label="Open menu and cart"><span>🛒</span><b>{cartCount}</b></Link>}<button className="menu-toggle" aria-label="Toggle navigation" aria-expanded={open} onClick={()=>setOpen(!open)}><span></span><span></span></button></div>
     </header>
   </>;
 }
 
 export function SiteFooter(){return <footer className="footer">
   <div className="footer-order">
-    <div><p>Hungry already?</p><h2>Let’s make it <em>spicy.</em></h2><span>Build your order from 182 dishes and send complete details directly on WhatsApp.</span></div>
+    <div><p>Hungry already?</p><h2>Let’s make it <em>spicy.</em></h2><span>Choose from 153 printed-menu choices and send complete details directly on WhatsApp.</span></div>
     <div className="footer-order-actions">
       <Link className="footer-menu-action" href="/menu"><small>Browse all dishes</small><b>Explore menu</b><i className="footer-menu-icon"><NavIcon name="Menu"/></i></Link>
       <a className="footer-whatsapp-action" href="https://wa.me/923055040848?text=Assalam-o-Alaikum%20Mirch%20N%20Spicy!%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer"><i><WhatsAppIcon/></i><b><small>Quick order</small>WhatsApp us</b><strong>→</strong></a>
