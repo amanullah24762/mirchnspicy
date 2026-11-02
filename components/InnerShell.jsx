@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import WhatsAppIcon from './WhatsAppIcon';
 import NavIcon from './NavIcon';
+import {BranchHeaderButton,BranchLocationBar} from './BranchProvider';
 
 const links = [['/','Home'],['/menu','Menu'],['/about','About'],['/locations','Locations'],['/blog','Blog & Recipes'],['/contact','Contact']];
 
@@ -16,8 +17,9 @@ export function SiteHeader({cartCount=0,onCartOpen}) {
     <header className="header inner-header">
       <Link className="brand real-brand" href="/"><img src="/logo.svg" alt="Mirch N Spicy"/><span>Mirch <i>N</i> Spicy<small>Good food • Great taste</small></span></Link>
       <nav className={`nav ${open?'open':''}`}>{links.map(([href,label])=>{const selected=href==='/'?pathname===href:pathname.startsWith(href);return <Link key={href} href={href} aria-current={selected?'page':undefined} onClick={()=>setOpen(false)}><NavIcon name={label}/><span>{label}</span></Link>})}</nav>
-      <div className="header-actions"><a className="btn btn-small" href="/menu">Order now</a>{onCartOpen?<button className="persistent-cart" onClick={onCartOpen} aria-label={`Open cart with ${cartCount} items`}><span>🛒</span><b>{cartCount}</b></button>:<Link className="persistent-cart" href="/menu" aria-label="Open menu and cart"><span>🛒</span><b>{cartCount}</b></Link>}<button className="menu-toggle" aria-label="Toggle navigation" aria-expanded={open} onClick={()=>setOpen(!open)}><span></span><span></span></button></div>
+      <div className="header-actions"><BranchHeaderButton/><a className="btn btn-small" href="/menu">Order now</a>{onCartOpen?<button className="persistent-cart" onClick={onCartOpen} aria-label={`Open cart with ${cartCount} items`}><span>🛒</span><b>{cartCount}</b></button>:<Link className="persistent-cart" href="/menu" aria-label="Open menu and cart"><span>🛒</span><b>{cartCount}</b></Link>}<button className="menu-toggle" aria-label="Toggle navigation" aria-expanded={open} onClick={()=>setOpen(!open)}><span></span><span></span></button></div>
     </header>
+    <BranchLocationBar/>
   </>;
 }
 

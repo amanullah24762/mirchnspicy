@@ -4,8 +4,10 @@ import InnerShell,{PageHero} from '../../components/InnerShell';
 import {menuCategories,fullMenu,getMenuItemImage} from '../../data/menu';
 import WhatsAppCheckout from '../../components/WhatsAppCheckout';
 import CartItemList from '../../components/CartItemList';
+import {useBranch} from '../../components/BranchProvider';
 
 export default function MenuPage(){
+ const {selectedBranch,openSelector}=useBranch();
  const [active,setActive]=useState('all'); const [query,setQuery]=useState(''); const [bag,setBag]=useState([]); const [bagOpen,setBagOpen]=useState(false); const [page,setPage]=useState(1); const [variantProduct,setVariantProduct]=useState(null);
  const searchRef=useRef(null);
  const perPage=8;
@@ -36,6 +38,7 @@ export default function MenuPage(){
  };
  return <InnerShell cartCount={bag.length} onCartOpen={()=>setBagOpen(true)}>
   <PageHero kicker="Explore the full menu" title="Pick your" accent="perfect craving." copy="Browse clearly defined categories, search for a dish and build your order in a few taps." image="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=88"/>
+  {selectedBranch&&<div className="selected-branch-strip selected-branch-strip-page"><div><small>Menu for your selected branch</small><b>{selectedBranch.name} · {selectedBranch.city}</b></div><button onClick={openSelector}>Change branch →</button></div>}
   <section className="menu-guide section" id="menu-categories"><header className="category-section-head"><div><p className="eyebrow">Find your favourite</p><h2>Browse by <em>category.</em></h2></div><p>Choose a category to jump directly to its dishes, prices and available variants.</p></header><div className="category-showcase">{menuCategories.map(c=>{const categoryItems=fullMenu.filter(x=>x.category===c.id);const count=categoryItems.reduce((sum,item)=>sum+(item.variants?.length||1),0);return <button key={c.id} onClick={()=>selectCategory(c.id)} className={active===c.id?'active':''} aria-label={`Browse ${c.name}`}><img src={c.image} alt="" onError={e=>{e.currentTarget.onerror=null;e.currentTarget.src='/logo.svg';e.currentTarget.classList.add('image-fallback')}}/><span>{c.icon}</span><div><strong>{c.name}</strong><small>{count} choices · View dishes ↓</small></div></button>})}</div></section>
   <section className="full-menu section" id="menu-results"><div className="menu-toolbar"><div><p className="eyebrow">Order your favourites</p><h2>{active==='all'?'Full menu':menuCategories.find(c=>c.id===active)?.name}</h2></div><label className={`menu-search ${query?'has-value':''}`}><span className="sr-only">Search menu dishes</span><svg className="menu-search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg><input ref={searchRef} type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search by dish or variant..." autoComplete="off"/>{query&&<button type="button" className="menu-search-clear" onClick={()=>{setQuery('');searchRef.current?.focus()}} aria-label="Clear menu search">×</button>}<kbd>⌘ K</kbd></label></div>
    <div className="menu-filter-row"><button className={active==='all'?'active':''} onClick={()=>selectCategory('all')}>All dishes</button>{menuCategories.map(c=><button key={c.id} className={active===c.id?'active':''} onClick={()=>selectCategory(c.id)}>{c.name}</button>)}</div>

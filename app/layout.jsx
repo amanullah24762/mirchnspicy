@@ -42,7 +42,16 @@ import './menu-search-redesign.css';
 import './variant-modal-final.css';
 import './home-card-quantity.css';
 import './home-menu-sync.css';
+import './branch-selector.css';
+import './branch-selector-extras.css';
+import './branch-location-header.css';
+import './branch-promotions.css';
+import './branch-mobile-polish.css';
+import './clickable-affordance.css';
+import './glass-card-system.css';
+import './branch-promotions.css';
 import MotionEffects from '../components/MotionEffects';
+import {BranchProvider} from '../components/BranchProvider';
 
 export const metadata = {
   title: 'Mirch N Spicy | Good Food. Great Taste.',
@@ -58,7 +67,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
       </head>
-      <body><MotionEffects/>{children}</body>
+      <body><BranchProvider><MotionEffects/>{children}</BranchProvider></body>
     </html>
   );
 }

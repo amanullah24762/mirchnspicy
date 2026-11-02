@@ -1,0 +1,9 @@
+.selected-branch-strip-page{width:min(1320px,90%);margin:24px auto 0}
+.checkout-branch{margin-bottom:16px;padding:12px;border:1px solid rgba(23,63,44,.15);border-radius:13px;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.checkout-branch>span{min-width:0;display:grid}
+.checkout-branch small,.pickup-branch-summary small{color:#e54420;font-size:8px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.checkout-branch b{margin-top:3px;color:#173f2c;font-size:12px}
+.checkout-branch button{min-height:38px;padding:0 12px;border:1px solid #f4b619;border-radius:10px;background:#173f2c;color:#fff;font-size:10px;font-weight:800;cursor:pointer}
+.pickup-branch-summary{padding:13px;border:1px solid rgba(23,63,44,.14);border-radius:12px;background:#fff;display:grid;gap:5px}
+.pickup-branch-summary b{color:#173f2c;font-size:11px;line-height:1.45}
+@media(max-width:640px){.selected-branch-strip-page{width:calc(100% - 36px)}.checkout-branch{align-items:flex-start;flex-direction:column}.checkout-branch button{width:100%}}

@@ -1,0 +1,94 @@
+@media (max-width: 820px) {
+  .branch-location-bar {
+    position: sticky !important;
+    z-index: 99 !important;
+    top: 76px !important;
+    min-height: 48px;
+    padding: 8px 16px !important;
+  }
+
+  .branch-location-bar > span {
+    max-width: calc(100% - 112px);
+  }
+
+  .branch-location-bar b { font-size: 11px; }
+  .branch-location-bar > strong { font-size: 8px; }
+
+  .branch-selector-overlay {
+    padding: 0 !important;
+    align-items: end !important;
+  }
+
+  .branch-selector {
+    width: 100% !important;
+    height: min(92dvh, 780px);
+    max-height: 92dvh !important;
+    border-radius: 25px 25px 0 0 !important;
+  }
+
+  .branch-selector > header {
+    flex: 0 0 auto;
+    padding: 20px 18px 16px !important;
+  }
+
+  .branch-selector > header h2 {
+    max-width: 270px;
+    font-size: 28px !important;
+  }
+
+  .branch-selector > header p { font-size: 11px; }
+  .branch-selector > header > button { width: 44px; height: 44px; }
+  .branch-locate { flex: 0 0 auto; padding-top: 13px; }
+
+  .branch-city-tabs {
+    flex: 0 0 auto;
+    display: flex !important;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .branch-city-tabs::-webkit-scrollbar { display: none; }
+  .branch-city-tabs button { flex: 0 0 auto; min-width: 140px; }
+
+  .branch-selector-list {
+    min-height: 0;
+    grid-template-columns: 1fr !important;
+    padding: 6px 14px calc(22px + env(safe-area-inset-bottom)) !important;
+    overscroll-behavior: contain;
+  }
+
+  .branch-selector-list > button {
+    min-height: 90px;
+    padding: 11px;
+    grid-template-columns: 58px minmax(0, 1fr) 20px !important;
+  }
+
+  .branch-selector-list > button img {
+    width: 58px !important;
+    height: 58px !important;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .branch-location-bar {
+    top: 70px !important;
+    padding-inline: 12px !important;
+  }
+
+  .branch-location-bar > strong {
+    max-width: 54px;
+    line-height: 1.2;
+    text-align: right;
+  }
+
+  .branch-selector {
+    height: 94dvh;
+    max-height: 94dvh !important;
+  }
+
+  .branch-selector > header h2 { font-size: 25px !important; }
+  .branch-city-tabs button { min-width: 124px; }
+  .branch-selector-list b { font-size: 15px; }
+}

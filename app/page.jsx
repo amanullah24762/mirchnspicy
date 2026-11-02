@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import WhatsAppCheckout from '../components/WhatsAppCheckout';
 import CartItemList from '../components/CartItemList';
 import WhatsAppIcon from '../components/WhatsAppIcon';
@@ -8,6 +8,8 @@ import NavIcon from '../components/NavIcon';
 import { SiteFooter } from '../components/InnerShell';
 import CustomSelect from '../components/CustomSelect';
 import { fullMenu, getMenuItemImage } from '../data/menu';
+import {BranchHeaderButton,BranchLocationBar,useBranch} from '../components/BranchProvider';
+import BranchPromotions from '../components/BranchPromotions';
 
 const legacyMenuItems = [
   {name:'Chicken Tikka (1 pc)',cat:'bbq',price:350,tag:'Grill favourite',desc:'Juicy chicken marinated in rich spices and char-grilled.',img:'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=700&q=85'},
@@ -46,6 +48,7 @@ function Brand({ footer = false }) {
 }
 
 export default function Home() {
+  const {selectedBranch,openSelector}=useBranch();
   const [filter, setFilter] = useState('all');
   const [city, setCity] = useState('islamabad');
   const [cart, setCart] = useState([]);
@@ -54,6 +57,7 @@ export default function Home() {
   const [variantProduct,setVariantProduct]=useState(null);
   const [review, setReview] = useState(0);
   const [sent, setSent] = useState(false);
+  useEffect(()=>{if(selectedBranch)setCity(selectedBranch.city.toLowerCase())},[selectedBranch]);
   const total = useMemo(() => cart.reduce((sum, item) => sum + item.price, 0), [cart]);
   const addToCart = item => setCart(current => [...current, item]);
   const productOptions=product=>product?.variants?.length?product.variants:[{name:'Standard serving',price:product?.price,desc:product?.desc}];
@@ -72,18 +76,20 @@ export default function Home() {
       <nav className={`nav ${mobileNav ? 'open' : ''}`} aria-label="Main navigation">
         {[['/','Home'],['/menu','Menu'],['/about','About'],['/locations','Locations'],['/blog','Blog & Recipes'],['/contact','Contact']].map(([href,item]) => <a key={item} href={href} aria-current={href==='/'?'page':undefined} onClick={() => setMobileNav(false)}><NavIcon name={item}/><span>{item}</span></a>)}
       </nav>
-      <div className="header-actions"><a className="btn btn-small" href="/menu">Order now</a><button className="persistent-cart" onClick={() => setCartOpen(true)} aria-label={`Open cart with ${cart.length} items`}><span>🛒</span><b>{cart.length}</b></button><button className="menu-toggle" aria-label="Open menu" aria-expanded={mobileNav} onClick={() => setMobileNav(!mobileNav)}><span></span><span></span></button></div>
+      <div className="header-actions"><BranchHeaderButton/><a className="btn btn-small" href="/menu">Order now</a><button className="persistent-cart" onClick={() => setCartOpen(true)} aria-label={`Open cart with ${cart.length} items`}><span>🛒</span><b>{cart.length}</b></button><button className="menu-toggle" aria-label="Open menu" aria-expanded={mobileNav} onClick={() => setMobileNav(!mobileNav)}><span></span><span></span></button></div>
     </header>
+    <BranchLocationBar/>
 
     <main>
       <section className="hero-clean" id="home">
-        <div className="hero-clean-copy reveal"><div className="hero-brand-chip"><img src="/logo.svg" alt=""/><span><small>Good food · Great taste</small>Pakistani Specialties</span></div><p className="hero-clean-kicker">Fresh from the grill <span>•</span> Full of flavour</p><h1>Har bite mein<br/><em>asli maza.</em></h1><p>Smoky BBQ, sizzling karahi aur iconic Boom Boom rolls—fresh ingredients aur bold desi spices ke saath.</p><div className="hero-clean-actions"><a className="hero-menu-btn" href="/menu">Explore the menu <span>↗</span></a><a className="hero-order-link" href="https://wa.me/923055040848?text=Assalam-o-Alaikum%20Mirch%20N%20Spicy!%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer"><b><WhatsAppIcon/></b><span><small>Order on WhatsApp</small>0305 5040848</span></a></div><div className="hero-clean-meta"><span>🔥 Made fresh</span><span>✦ 153 menu choices</span><span>📍 11 branches</span></div></div>
+        <div className="hero-clean-copy reveal"><div className="hero-brand-chip"><img src="/logo.svg" alt=""/><span><small>{selectedBranch?`Now serving from ${selectedBranch.city}`:'Good food · Great taste'}</small>{selectedBranch?.name||'Pakistani Specialties'}</span></div><p className="hero-clean-kicker">Fresh from the grill <span>•</span> Full of flavour</p><h1>Har bite mein<br/><em>asli maza.</em></h1><p>{selectedBranch?`Explore the Mirch N Spicy menu available for ${selectedBranch.name}. Your selected branch will be attached automatically when you order.`:'Smoky BBQ, sizzling karahi aur iconic Boom Boom rolls—fresh ingredients aur bold desi spices ke saath.'}</p><div className="hero-clean-actions"><a className="hero-menu-btn" href="/menu">Explore branch menu <span>↗</span></a><a className="hero-order-link" href="https://wa.me/923055040848?text=Assalam-o-Alaikum%20Mirch%20N%20Spicy!%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer"><b><WhatsAppIcon/></b><span><small>Order on WhatsApp</small>0305 5040848</span></a></div><div className="hero-clean-meta"><span>🔥 Made fresh</span><span>✦ 153 menu choices</span><button className="hero-branch-meta" onClick={openSelector}>📍 {selectedBranch?.name||'Choose branch'}</button></div></div>
         <div className="hero-clean-visual reveal"><div className="hero-clean-image"><img src="/images/hero-pakistani-feast.png" alt="Pakistani karahi, BBQ, seekh kebabs, naan and paratha rolls"/></div><div className="hero-clean-label"><span>Made for sharing</span><strong>A proper desi feast</strong><small>Karahi · BBQ · Rolls · Naan</small></div><div className="hero-spice-seal"><strong>100%</strong><span>DESI<br/>FLAVOUR</span></div></div>
         <div className="hero-bottom-line"><span>Serving Islamabad & Rawalpindi</span><i></i><span>Open daily · 9AM till late</span></div>
       </section>
       <section className="ticker"><div>BBQ & GRILLED <i>✦</i> KARAHI <i>✦</i> BOOM BOOM ROLLS <i>✦</i> BIRYANI <i>✦</i> BURGERS <i>✦</i> DEALS <i>✦</i></div></section>
 
-      <section className="section menu-section" id="menu"><div className="section-head reveal"><div><p className="eyebrow">A little heat, a lot of heart</p><h2>Cravings, <em>sorted.</em></h2></div><p>Choose from our most-loved dishes. Use the categories to find your favourite, then add it to your bag.</p></div>
+      <BranchPromotions />
+      <section className="section menu-section" id="menu"><div className="section-head reveal"><div><p className="eyebrow">{selectedBranch?`${selectedBranch.name} branch menu`:'A little heat, a lot of heart'}</p><h2>Cravings, <em>sorted.</em></h2></div><p>{selectedBranch?`Showing the current printed menu for ${selectedBranch.name}, ${selectedBranch.city}. Item availability will be confirmed by this branch on WhatsApp.`:'Choose from our most-loved dishes. Use the categories to find your favourite, then add it to your bag.'}</p></div>
         <div className="category-tabs">{['all','bbq','rolls','karahi','rice','burgers','drinks','deals'].map(cat => <button key={cat} className={filter === cat ? 'active' : ''} onClick={() => setFilter(cat)}>{cat[0].toUpperCase()+cat.slice(1)}</button>)}</div>
         <div className="menu-grid">{menuItems.filter(item => filter === 'all' || item.cat === filter).map(item => {const quantity=itemQuantity(item);return <article className={`food-card ${quantity?'food-card-selected':''}`} key={item.name}><div className="food-image"><img src={item.img} alt={item.name} loading="lazy" onError={e=>{e.currentTarget.onerror=null;e.currentTarget.src='/logo.svg';e.currentTarget.classList.add('image-fallback')}}/><span>{item.tag}</span>{quantity>0&&<b className="food-selected-badge">{quantity} selected</b>}</div><div className="food-info"><small>{item.cat}</small><h3>{item.name}</h3><p>{item.desc}</p><div className="food-bottom"><strong>{item.variants?.length?'From ':''}Rs. {item.price.toLocaleString()}</strong><button className={`home-select-button ${quantity?'has-selection':''}`} onClick={()=>setVariantProduct(item)} aria-label={`${quantity?'Edit':'Select'} ${item.name}`}><span>{quantity?'Edit choices':'Select'}</span><i>{quantity||'+'}</i></button></div></div></article>})}</div>
         <div className="menu-note"><span>Looking for more?</span><p>Explore all 153 printed-menu choices, including rolls, BBQ, karahi, rice, soups, burgers, deals and drinks.</p><a className="btn btn-dark" href="/menu">View complete menu →</a></div>
@@ -93,7 +99,7 @@ export default function Home() {
 
       <section className="experience"><div className="experience-copy reveal"><p className="eyebrow">Why dine with us?</p><h2>More than a meal.<br/><em>It’s a mood.</em></h2><div className="amenities">{['Free WiFi','Family seating','Parking','Takeaway','Delivery','Catering'].map(x=><span key={x}>{x}</span>)}</div><p>Fresh ingredients daily. Sanitized kitchens. Trained food handlers. Regular quality checks and safe, sealed packaging — because flavour matters, but safety is everything.</p></div><div className="experience-card"><small>QUALITY PROMISE</small><strong>Fresh every day</strong><span>Premium meats • Hand-ground spices • Made-to-order meals</span></div></section>
 
-      <section className="section locations" id="locations"><div className="section-head reveal"><div><p className="eyebrow">Find your nearest branch</p><h2>Serving flavour<br/><em>across the twin cities.</em></h2></div><div className="hours"><small>Opening hours</small><strong>Mon–Fri · 9AM–10PM</strong><strong>Sat–Sun · 9AM–12AM</strong></div></div><div className="location-layout"><div className="city-tabs">{Object.keys(branches).map(name=><button key={name} className={city===name?'active':''} onClick={()=>setCity(name)}>{name[0].toUpperCase()+name.slice(1)} <span>{branches[name].length} locations</span></button>)}</div><div className="location-list">{branches[city].map((address,index)=><article className="location-card" key={address}><b>{String(index+1).padStart(2,'0')}</b><div><h3>{address.split(',')[0]}{address.includes('Gulberg Greens')?' · New':''}</h3><p>{address}</p></div><a href={`https://maps.google.com/?q=${encodeURIComponent(address+', Pakistan')}`} target="_blank" rel="noreferrer">↗</a></article>)}</div></div></section>
+      <section className="section locations" id="locations"><div className="section-head reveal"><div><p className="eyebrow">{selectedBranch?'Your selected location':'Find your nearest branch'}</p><h2>{selectedBranch?selectedBranch.name:'Serving flavour'}<br/><em>{selectedBranch?selectedBranch.city:'across the twin cities.'}</em></h2></div><div className="hours"><small>Opening hours</small><strong>Mon–Fri · 9AM–10PM</strong><strong>Sat–Sun · 9AM–12AM</strong></div></div><div className="location-layout"><div className="city-tabs">{Object.keys(branches).map(name=><button key={name} className={city===name?'active':''} onClick={()=>setCity(name)}>{name[0].toUpperCase()+name.slice(1)} <span>{branches[name].length} locations</span></button>)}</div><div className="location-list">{branches[city].map((address,index)=>{const isSelected=selectedBranch?.address.includes(address.split(',')[0])||address.includes(selectedBranch?.name||'__none__');return <article className={`location-card ${isSelected?'selected-branch-card':''}`} key={address}><b>{isSelected?'✓':String(index+1).padStart(2,'0')}</b><div><h3>{address.split(',')[0]}{address.includes('Gulberg Greens')?' · New':''}{isSelected?' · Selected':''}</h3><p>{address}</p></div><a href={`https://maps.google.com/?q=${encodeURIComponent(address+', Pakistan')}`} target="_blank" rel="noreferrer">↗</a></article>})}</div></div></section>
 
       <section className="testimonials" id="stories"><p className="eyebrow">Loved by spice seekers</p><h2>Happy plates.<br/><em>Happier people.</em></h2><div className="quote-wrap"><button className="quote-arrow" onClick={()=>setReview((review-1+reviews.length)%reviews.length)}>←</button><blockquote><div className="stars">★★★★★</div><p>“{reviews[review][0]}”</p><footer>{reviews[review][1]} <span>— {reviews[review][2]}</span></footer></blockquote><button className="quote-arrow" onClick={()=>setReview((review+1)%reviews.length)}>→</button></div></section>
 

@@ -1,18 +1,20 @@
 .header {
-  position: static !important;
-  top: auto !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
   transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: rgba(244, 237, 223, 0.58) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42) !important;
+  box-shadow: 0 8px 30px rgba(23, 23, 19, 0.06);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(22px) saturate(145%);
 }
 
 @media (max-width: 1024px) {
   .header {
     position: sticky !important;
-    top: 0 !important;
-    z-index: 100 !important;
-    transform: none !important;
-    background: rgba(244, 237, 223, 0.97) !important;
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
   }
 
   .menu-toggle,
